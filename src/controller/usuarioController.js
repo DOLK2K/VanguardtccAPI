@@ -12,6 +12,9 @@ server.get('/usuario', async (req,resp) => {
         }
         resp.send(resposta)
 
+        if(!resposta.email) {
+            throw new Error('email obrigatorio')
+        }
     }catch(err) {
         resp.status(401).send({
             erro:err.message
