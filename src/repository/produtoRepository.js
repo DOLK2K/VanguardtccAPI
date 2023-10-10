@@ -8,6 +8,5 @@ export async  function CadastroProduto(produto) {
     `
     const [resposta] = await con.query(comando, [produto.produto, produto.nome, produto.quantidade, produto.preco, produto.valortotal]);
     produto.id = resposta.insertid;
-
     return produto;
 }

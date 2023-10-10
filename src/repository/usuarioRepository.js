@@ -4,12 +4,11 @@ export  async function login (email, senha) {
     const  comando = 
     `SELECT id_login AS id,
     ds_email AS email
-    FROM tb_login
+    FROM tb_loginn
     WHERE ds_email = ?
     AND ds_senha = ?`
 
     const [linhas] = await con.query(comando, [email, senha])
-    
     console.log(linhas)
-    return linhas; 
+    return linhas[0]; 
 }
