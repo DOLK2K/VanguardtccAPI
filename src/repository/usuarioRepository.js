@@ -9,7 +9,7 @@ export  async function login (email, senha) {
     AND ds_senha = ?`
 
     const [linhas] = await con.query(comando, [email, senha])
-
+    
     console.log(linhas)
     return linhas; 
 }

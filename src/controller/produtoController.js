@@ -1,4 +1,4 @@
-import {InserirProduto} from '../repository/produtoRepository.js'
+import {CadastroProduto} from '../repository/produtoRepository.js'
 
 import { Router } from 'express'
 const server = Router();
@@ -7,7 +7,7 @@ server.post('/produto', async (req, resp ) => {
     try{
         const ProdutoInserido = req.body;
 
-       const produto = await InserirProduto(ProdutoInserido)
+       const produto = await CadastroProduto(ProdutoInserido)
 
         resp.send(produto)
     } catch (err) {
