@@ -1,16 +1,22 @@
 use meutcccDB;
 
-select * from tb_loginn;
+INSERT INTO tb_cadastro(  ds_email, nr_telefone, ds_senha, nm_nome_completo)
+				values  ('viniciusUser@gmail.com', '28382983', '123456', 'Vinicius gonçalves');
 
 insert into tb_loginn ( ds_email, ds_senha)
 			values ( 'virgilchupeta@gmail.com', '1234'),
 					('usuario@gmail.com', 1234);
+                    
+
        
             
+	SELECT * FROM tb_cadastro;
+            select * from tb_loginn;
+            
+    
 	SELECT id_login AS 	id,
     ds_email  AS	email
     from tb_loginn
     WHERE ds_email =	'virgilchupeta@gmail.com'
     AND ds_senha	=	'1234'
     
-     
