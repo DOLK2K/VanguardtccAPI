@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {Cadastro, login} from '../repository/usuarioRepository.js'
+import {Adm, Cadastro, login} from '../repository/usuarioRepository.js'
 const endpoint = Router()
 
 
@@ -59,6 +59,24 @@ endpoint.post('/usuario/login', async (req, resp) => {
     }
 })
 
+
+endpoint.post ('/administrador', async (req, resp) => {
+    try{
+        const {email2, senha2 } = req.body
+
+        const resposta2 = await Adm(email2,senha2)
+        if(!resposta2) {
+            throw new Error('credencias invalidas');
+        }
+        resp.send(resposta2)
+
+        
+    }catch (err) {
+        resp.status(401).send({
+            erro: err.message
+        });
+    }
+})
 
 
 
