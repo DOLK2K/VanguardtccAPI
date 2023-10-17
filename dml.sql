@@ -9,11 +9,15 @@ insert into tb_loginn ( ds_email, ds_senha)
                     
 insert into tb_administrador (ds_email, ds_senha) 
 				values('administradorvinicius@gmail.com', '1234');
+                
+insert into tb_suporte_home (nm_nome, ds_telefone, ds_email, ds_mensagem)
+				values ('viniciusteste', '119450475', 'empresa@gmail.com','a empresa de vocês é uma bosta, tudo que vocês fazem ficou horrivel, site está com designr horroso' );
        
             
 	SELECT * FROM tb_cadastro;
             select * from tb_loginn;
             select * from tb_administrador;
+            select * from tb_suporte_home;
     
     SELECT id_administrador AS id,
     ds_email AS		email
