@@ -1,6 +1,5 @@
 import {con} from './connection.js'
 
-
 export async function Cadastro (cliente) {
     const comando2 = `
     INSERT INTO tb_cadastro(  ds_email, nr_telefone, ds_senha, nm_nome_completo)

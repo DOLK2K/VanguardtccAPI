@@ -5,9 +5,8 @@ const endpoint = Router()
 
 endpoint.post('/usuario', async (req,resp) => {
     try {
-        let usuario = req.body 
+        let usuario = req.body
         
-
         if(!usuario.email) {
             throw new Error('email obrigatorio')
         }
