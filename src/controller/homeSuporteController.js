@@ -6,42 +6,36 @@ const endpoint = Router()
 endpoint.post('/Suportehome', async (req, resp) => {
 
     try {
-        let Suportee = req.body
+        let resposta = req.body
         
-
-        if(!Suportee.nome) {
-            throw new Error('nome está vazio')
+        if(!resposta.nome) {
+            throw new Error('Preencha seu nome')
         }
 
-        if((!Suportee.telefone)) {
-            throw new Error('nescessário preencher o Telefone')
+        if(!resposta.telefone) {
+            throw new Error('Preencha o numero de telefone')
         }
 
-        if(!Suportee.email) {
-            throw new Error('nescessário preencher email ')
+        if(!resposta.email) {
+            throw new Error('Coloque seu email')
         }
 
-        if(!Suportee.mensagem) {
-            throw new Error ('coloque a mensagem que você enviarar pro Suporte')
-        }
-
-        if(!Suportee) {
-            throw new Error('credenciais invalida')
+        if(!resposta.mensagem) {
+            throw new Error('Coloque a mensagem que deseja')
         }
         
-        else{
-            let f = await Suporte(Suportee)
-        resp.send(f)
+      
+        let x = await Suporte(resposta)
+        resp.send(x)
 
+        if(!resposta) {
+            throw new Error('credenciais invalidas')
         }
-
-        
-
 
     }catch(err) {
-       resp.status(404).send ({
-            erro:'erro'
-       })
+        resp.status(404).send({
+            erro:err.message
+        });
     }
 })
  
