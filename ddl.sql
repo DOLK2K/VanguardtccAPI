@@ -17,17 +17,38 @@ ds_senha	varchar(200)
     
     );
     
-CREATE TABLE tb_administrador (
-    id_administrador INT PRIMARY KEY AUTO_INCREMENT,
-    ds_email VARCHAR(200),
-    ds_senha VARCHAR(200)
+CREATE TABLE tb_adm (
+    id_adm INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    ds_email VARCHAR(200) not null,
+    ds_senha VARCHAR(200) not null
 );
 
 
-create table tb_suporte_home (
-id_suporte_home int primary key auto_increment,
-nm_nome 		varchar(200) not null,
-ds_telefone		varchar(200) not null,
-ds_email		varchar(200) not null,
-ds_mensagem		varchar(200) not null
+create table tb_produto	 (
+	id_produto	int primary key auto_increment,
+    ds_descricao	varchar(200),
+    ds_quantidade 	varchar(200),
+    ds_preco		varchar(200),
+    ds_total		varchar(200)
+
 );
+
+create table tb_cadastro_produto (
+id_tb_cadastro_produto   int primary key auto_increment,
+ds_descricao_produto     varchar(200),
+ds_tipo                  varchar(200),
+ds_categoria			 varchar(200),
+qtd_quantidade           integer,
+bt_disponivel 			 boolean,
+nr_preco_produto         varchar(200),
+nr_preco_venda           varchar(200)
+);
+
+
+-- descricao: 
+-- tipo:
+-- categoria:
+-- quantidade:
+-- disponivel:
+-- preco: 
+-- venda:

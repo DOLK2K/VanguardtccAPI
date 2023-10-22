@@ -1,48 +1,35 @@
 use meutcccDB;
 
+INSERT INTO tb_cadastro(  ds_email, nr_telefone, ds_senha, nm_nome_completo)
+				values  ('viniciusUser@gmail.com', '28382983', '123456', 'Vinicius gonçalves');
 
-
-insert into tb_loginn (ds_email, ds_senha, nm_user)
-			values ( 'virgilchupeta@gmail.com', '1234','toninho');
-					
-		
-#efetua login do user                   
-select ds_email as email,
-		nm_user as user 
- from tb_loginn
-where ds_email = 'virgilchupeta@gmail.com'
-and 	  ds_senha = '1234';
-
-select * 
-from tb_login 
-inner join tb_cadastro
-on tb_login.id_cadastro = tb_cadastro.id_cadastro;
-	
-    
+insert into tb_loginn ( ds_email, ds_senha)
+			values ( 'virgilchupeta@gmail.com', '1234'),
+					('usuario@gmail.com', 1234);
                     
-insert into tb_administrador (ds_email, ds_senha) 
-				values('administradorvinicius@gmail.com', '1234');
-                
-INSERT INTO  tb_suporte_home (nm_nome, ds_telefone, ds_email, ds_mensagem)
-				value ('viniciusteste', '119450475', 'empresa@gmail.com','a empresa de vocês é uma bosta' );
+insert into tb_adm (ds_email, ds_senha) 
+				values('adm@gmail.com', '1234567');
+       
+       
+insert into tb_cadastro_produto (ds_descricao_produto, ds_tipo, ds_categoria, qtd_quantidade , bt_disponivel, nr_preco_produto, nr_preco_venda)
+		values('Bota Impermeável Timberland', 'bota', 'Vestuario', '18', true, '39.99', '9.99');
             
+            
+            
+	select * from tb_cadastro_produto;
 	SELECT * FROM tb_cadastro;
             select * from tb_loginn;
-            select * from tb_administrador;
-            select * from tb_suporte_home;
-            
-            drop table tb_suporte_home; 
+            select * from tb_adm;
     
-    SELECT id_administrador AS id,
+    SELECT id_adm AS id,
     ds_email AS		email
-    from tb_administrador
-    WHERE ds_email = 'administradorvinicius@gmail.com'
-    AND ds_senha ='1234';
+    from tb_adm
+    WHERE ds_email = 'adm@gmail.com'
+    AND ds_senha ='1234567';
     
-    
-
 	SELECT id_login AS 	id,
     ds_email  AS	email
     from tb_loginn
     WHERE ds_email =	'virgilchupeta@gmail.com'
     AND ds_senha	=	'1234';
+                        
