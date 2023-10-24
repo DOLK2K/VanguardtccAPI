@@ -44,11 +44,8 @@ nr_preco_produto         varchar(200),
 nr_preco_venda           varchar(200)
 );
 
-
--- descricao: 
--- tipo:
--- categoria:
--- quantidade:
--- disponivel:
--- preco: 
--- venda:
+create table tb_produtooo_imagem (
+id_tb_produtooo_imagem    int primary key auto_increment,
+id_tb_cadastro_produto  int,
+img_produto             varchar(800)
+);
