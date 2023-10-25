@@ -2,7 +2,8 @@ import { Router } from "express";
 import { Produto } from "../repository/produtoRepository.js";
 import multer from "multer";
 const endpoint = Router()
-const upload = multer({dest: "/storage/capas"})
+const upload = multer({dest: "/storage/capas"});
+import { EnviarImagem } from "../repository/produtoRepository.js";
 
 endpoint.post('/produto', async (req, resp) => {
     
@@ -62,7 +63,7 @@ endpoint.put('/produto/:id/capa', upload.single('capa'), async (req,resp) => {
         resp.status(204).send();
 
         if(resposta != 1 ) {
-
+            throw new Error('a imagem nao pode ser salva')
         }
     }catch(err) {
         resp.status(404).send({
