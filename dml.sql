@@ -15,7 +15,7 @@ insert into tb_cadastro_produto (ds_descricao_produto, ds_tipo, ds_categoria, qt
 		values('Bota Impermeável Timberland', 'bota', 'Vestuario', '18', true, '39.99', '9.99');
             
 
-insert into tb_produto_imagem(id_tb_cadastro_produto ,img_produto)
+insert into tb_produtooo_imagem(id_tb_cadastro_produto,img_produto)
 			values( 1,'/storage/images/profile');
             
 	select * from tb_cadastro_produto;
@@ -27,6 +27,8 @@ insert into tb_produto_imagem(id_tb_cadastro_produto ,img_produto)
     SET img_produto = "/storage/images/profile"
     WHERE id_tb_produtooo_imagem  = 1;
     
+    
+    
     SELECT id_adm AS id,
     ds_email AS		email
     from tb_adm
@@ -34,7 +36,7 @@ insert into tb_produto_imagem(id_tb_cadastro_produto ,img_produto)
     AND ds_senha ='1234567';
     
     
-	select * from tb_produto_imagem;
+	select * from tb_produtooo_imagem;
     
     
 	SELECT id_login AS 	id,

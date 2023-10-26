@@ -9,6 +9,7 @@ const server = express()
 server.use(cors())
 server.use(express.json())
 
+server.use('/storage/capaProduto', express.static('storage/capaProduto'))
 server.use(Usuariocontroller);
 server.use(SuporteController);
 server.use(ProdutoController);

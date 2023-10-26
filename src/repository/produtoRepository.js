@@ -12,11 +12,22 @@ export async function Produto(adicionar) {
    return adicionar;
 }
 
-export async function EnviarImagem (imagem, id) {
+export async function EnviarImagem(imagem, id) {
   const comando = `
-  insert into tb_produto_imagem(img_produto)
-  values(?);    `
+    UPDATE tb_produtooo_imagem
+    SET img_produto = ?
+    WHERE id_tb_produtooo_imagem = ?;
+  `;
 
-  const [enviar] = await con.query(enviar, [imagem, id]);
-  return -+enviar.affectedRows  
-} 
+  const [enviar] = await con.query(comando, [imagem, id]);
+  return enviar.affectedRows;
+}
+
+
+//produto:
+//tipo
+//categoria
+//quantidade
+//disponivel
+//preco
+//frete

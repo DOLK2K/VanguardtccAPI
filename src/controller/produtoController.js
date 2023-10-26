@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { Produto } from "../repository/produtoRepository.js";
+import { EnviarImagem, Produto } from "../repository/produtoRepository.js";
 import multer from "multer";
 const endpoint = Router()
-const upload = multer({dest: "/storage/capas"});
-import { EnviarImagem } from "../repository/produtoRepository.js";
+
+const upload = multer({dest:'storage/capaProduto'});
 
 endpoint.post('/produto', async (req, resp) => {
     
@@ -49,7 +49,7 @@ endpoint.post('/produto', async (req, resp) => {
 
     }catch(err) {
         resp.status(500).send({
-            erro:err.mensage
+            erro:err.message
         })
      }
 })
@@ -59,7 +59,7 @@ endpoint.put('/produto/:id/capa', upload.single('capa'), async (req,resp) => {
     try {
         const {id} = req.params;
         const imagem = req.file.path
-        const resposta = await EnviarImagem(imagem, id)
+        const resposta = await EnviarImagem (imagem, id)
         resp.status(204).send();
 
         if(resposta != 1 ) {
