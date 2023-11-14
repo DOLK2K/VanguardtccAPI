@@ -11,7 +11,7 @@ endpoint.post('/usuario', async (req,resp) => {
             throw new Error('email obrigatorio')
         }
 
-        if(  (!usuario.telefone)) {
+        if((!usuario.telefone)) {
              throw new Error('numero invalido ou campo vazio')
         }
 

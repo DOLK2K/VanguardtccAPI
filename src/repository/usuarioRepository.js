@@ -31,10 +31,11 @@ export async function Adm (email2,senha2) {
     const comando3 =
     `
     SELECT id_adm AS id,
-    ds_email AS email
+    ds_email AS email,
+    nm_nome AS nome
     FROM tb_adm
     WHERE ds_email = ?
-    AND ds_senha = ?`
+    AND ds_senha = ?`   
 
 
     const [linhass] = await con.query(comando3, [email2,senha2])
