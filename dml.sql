@@ -30,7 +30,8 @@ insert into tb_produtooo_imagem(id_tb_cadastro_produto,img_produto)
     
     
     SELECT id_adm AS id,
-    ds_email AS		email
+    ds_email AS		email,
+    nm_nome AS      nome
     from tb_adm
     WHERE ds_email = 'adm@gmail.com'
     AND ds_senha ='1234567';
