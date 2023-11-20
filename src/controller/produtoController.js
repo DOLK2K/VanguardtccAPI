@@ -12,6 +12,7 @@ endpoint.post('/produto', async (req, resp) => {
 
     let usuario = req.body
 
+       
     if(!usuario.descricao) {
         throw new Error('escreva o campo da descrição')
     }
@@ -39,7 +40,7 @@ endpoint.post('/produto', async (req, resp) => {
     if(!usuario.frete) {
         throw new Error('digite o numero do frete')
     }
-
+    
     if(!usuario) {
         throw new Error('credenciais invalida')
     }
@@ -48,7 +49,7 @@ endpoint.post('/produto', async (req, resp) => {
     resp.send(x);
 
     }catch(err) {
-        resp.status(500).send({
+        resp.status(404).send({
             erro:err.message
         })
      }
@@ -66,7 +67,7 @@ endpoint.put('/produto/:id/capa', upload.single('capa'), async (req,resp) => {
             throw new Error('a imagem nao pode ser salva')
         }
     }catch(err) {
-        resp.status(404).send({
+        resp.status(400).send({
             erro:err.message
         })
     }

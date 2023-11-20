@@ -1,11 +1,6 @@
 create database meutcccDB;
 use meutcccDB;
 
-create table tb_loginn (
-id_login	int primary key auto_increment,
-ds_email	varchar(200),
-ds_senha	varchar(200)
-);
 
 
     create table tb_cadastro (
@@ -24,14 +19,6 @@ CREATE TABLE tb_adm (
 );
 
 
-create table tb_produto	 (
-	id_produto	int primary key auto_increment,
-    ds_descricao	varchar(200),
-    ds_quantidade 	varchar(200),
-    ds_preco		varchar(200),
-    ds_total		varchar(200)
-
-);
 
 create table tb_cadastro_produto (
 id_tb_cadastro_produto   int primary key auto_increment,
