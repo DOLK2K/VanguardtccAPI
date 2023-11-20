@@ -14,9 +14,10 @@ export async function Cadastro (cliente) {
 
 export  async function login (email, senha) {
     const  comando = 
-    `SELECT id_login AS id,
-    ds_email AS email
-    FROM tb_loginn
+    `SELECT id_cadastro AS id,
+    ds_email AS email,
+    nm_nome_completo AS nome
+    FROM tb_cadastro
     WHERE ds_email = ?
     AND ds_senha = ?`
 
