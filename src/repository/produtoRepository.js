@@ -24,6 +24,23 @@ export async function EnviarImagem(imagem, id) {
 }
 
 
+
+export async function listartodosproduto () {
+  const comando = `
+  select id_tb_cadastro_produto      id,
+        ds_descricao_produto        descricao,
+        ds_tipo                     tipo,
+        ds_categoria                categoria,
+        qtd_quantidade              quantidade,
+        bt_disponivel 				disponivel,
+        nr_preco_produto   			preco,
+        nr_preco_venda              frete
+        from tb_cadastro_produto`;
+
+        const [linhas] = await con.query(comando);
+        return linhas
+}
+
 //produto:
 //tipo
 //categoria

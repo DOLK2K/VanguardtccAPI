@@ -15,6 +15,7 @@ use meutcccDB;
 CREATE TABLE tb_adm (
     id_adm INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     ds_email VARCHAR(200) not null,
+    nm_nome     varchar(200),
     ds_senha VARCHAR(200) not null
 );
 

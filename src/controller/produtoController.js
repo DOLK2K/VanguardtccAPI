@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { EnviarImagem, Produto } from "../repository/produtoRepository.js";
+import { EnviarImagem, Produto, listartodosproduto } from "../repository/produtoRepository.js";
 import multer from "multer";
 const endpoint = Router()
 
@@ -72,5 +72,19 @@ endpoint.put('/produto/:id/capa', upload.single('capa'), async (req,resp) => {
         })
     }
 })
+
+
+
+endpoint.get('/produto', async (req, resp) => {
+    try {
+        const resposta = await listartodosproduto()
+        resp.send(resposta)
+    }  catch (err) {
+        resp.status(400).send ({
+            erro:err.message
+        })
+    }
+})
+
 
 export default endpoint;
