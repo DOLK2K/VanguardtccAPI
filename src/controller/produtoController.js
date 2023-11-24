@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { EnviarImagem, Produto, listartodosproduto } from "../repository/produtoRepository.js";
+import { EnviarImagem, Produto, buscarporid, buscarpornome, listartodosproduto } from "../repository/produtoRepository.js";
 import multer from "multer";
 const endpoint = Router()
 
@@ -85,6 +85,35 @@ endpoint.get('/produto', async (req, resp) => {
         })
     }
 })
+
+
+endpoint.get('/produto/busca', async (req, resp) => {
+    try {
+
+        const {nome}=  req.query 
+        const resposta = await buscarpornome(nome)
+        resp.send(resposta)
+    }  catch (err) {
+        resp.status(400).send ({
+            erro:err.message
+        })
+    }
+})
+
+
+endpoint.get('/produto/:id', async (req, resp) => {
+    try {
+
+        const id=  req.params.id 
+        const resposta = await buscarporid( Number( id))
+        resp.send(resposta)
+    }  catch (err) {
+        resp.status(400).send ({
+            erro:err.message
+        })
+    }
+})
+
 
 
 export default endpoint;
